@@ -1,10 +1,7 @@
 :root {
-    --bg: #020617;        /* Deep Midnight */
-    --card: #0f172a;      /* Slate blue card */
-    --text: #f8fafc;      /* Crisp white */
-    --muted: #94a3b8;     /* Soft gray */
-    --accent: #3b82f6;    /* Tech Blue */
-    --border: #1e293b;
+    --bg: #020617;        --card: #0f172a;
+    --text: #f8fafc;      --muted: #94a3b8;
+    --accent: #3b82f6;    --border: #1e293b;
     --orange: #fb923c;
 }
 
@@ -15,18 +12,12 @@ body {
     color: var(--text);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden; /* Prevents unwanted side-scrolling */
-}
-
-html, body {
     overflow-x: hidden;
-    width: 100%;
-    position: relative;
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-/* NAV STYLING - Handles the new flex structure with Socials */
+/* --- NAV RECONSTRUCTION --- */
 nav {
     position: sticky;
     top: 0;
@@ -40,498 +31,81 @@ nav {
 .nav-flex { 
     display: flex; 
     justify-content: space-between; 
-    align-items: center;
-    flex-wrap: wrap; /* Allows items to move to next line instead of pushing the screen width */
-    gap: 15px;
+    align-items: center; 
+    gap: 20px;
 }
 
-@media (max-width: 768px) {
-    /* Align everything to center for a balanced mobile look */
-    .nav-flex {
-        justify-content: center;
-        text-align: center;
-    }
+/* 4) Logo Aligned Left with Icons Next to it */
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
 .logo { 
     color: #ffffff; 
     font-weight: 800; 
-    font-size: 1.6rem; 
-    letter-spacing: 0.5px; 
-    margin-bottom: 8px; /* Space above the nav links */
+    font-size: 1.5rem; 
+    white-space: nowrap;
 }
 
-.logo span { color: var(--accent); }
-
-.brand-group {
+.nav-socials {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1; /* Takes available space */
-    min-width: 250px; /* Prevents name from getting squashed */
+    align-items: center;
+    gap: 12px;
 }
 
-.brand-group {
-        align-items: center;
-        width: 100%;
+.social-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s;
+    filter: brightness(0) invert(1); /* Makes black icons white */
 }
 
+.social-icon:hover { transform: scale(1.1); }
+
+/* 2) 5 Nav Links in One Line */
 .nav-links { 
     list-style: none; 
     display: flex; 
-    justify-content: center;
-    gap: 0.8rem; /* Tighter gap for mobile */
-    margin-top: 10px;
-    flex-wrap: wrap; /* Crucial: wraps tabs to a new line on small phones */
+    gap: 1.2rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #ffffff; /* 1) White when idle */
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-.nav-links a:hover {
-    color: var(--accent); /* 1) Blue when hovered */
-}
-
-.nav-socials {
-        display: flex;
-        flex-direction: row; 
-        justify-content: center;
-        width: 100%;
-        gap: 8px;
-        order: -1; /* Moves socials to the very top on mobile */
-        margin-bottom: 10px;
-    }
-
-
-/* HERO STYLING */
-.hero { padding: 120px 0 80px; text-align: center; }
-.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 1.5rem 0; letter-spacing: -0.05em; font-weight: 800; line-height: 1.1; }
-.hero p { font-size: 1.2rem; color: var(--muted); max-width: 750px; margin: 0 auto; }
-.badge { display: inline-block; padding: 6px 16px; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent); border-radius: 99px; color: var(--accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-
-/* PROJECT GRID */
-.grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-    gap: 2.5rem; 
-    padding: 40px 0; 
-}
-
-.card { 
-    background: var(--card); 
-    border-radius: 24px; 
-    border: 1px solid var(--border); 
-    overflow: hidden; 
-    display: flex;
-    flex-direction: column;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-}
-
-.card:hover { 
-    transform: translateY(-12px); 
-    border-color: var(--accent); 
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15); 
-}
-
-/* Updated Image Container for better Aspect Ratio */
-.card-img-container { 
-    position: relative;
-    height: 220px; 
-    width: 100%; 
-    overflow: hidden; 
-    background: #111827;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid var(--border);
-}
-
-.card-img-container img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.3s; }
-.card:hover img { opacity: 1; }
-
-/* Styling the "Mapping in Progress" spans inside images */
-.card-img-container span {
-    position: absolute;
-    z-index: 2;
-    background: rgba(2, 6, 23, 0.7);
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid var(--border);
-}
-
-.card-content { padding: 32px; flex-grow: 1; display: flex; flex-direction: column; }
-.card-content h3 { margin: 12px 0; font-size: 1.4rem; color: var(--text); }
-.card-content p { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
-
-/* BUTTONS & TAGS */
-.tag { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; width: fit-content; }
-.tag-blue { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
-.tag-orange { background: rgba(249, 115, 22, 0.2); color: #fb923c; }
-.tag-gray { background: rgba(148, 163, 184, 0.2); color: #94a3b8; }
-
-.btn-sm {
-        padding: 6px 10px;
-        font-size: 0.75rem;
-}
-
-.btn-sm:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-
-.link { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.95rem; border-bottom: 2px solid transparent; transition: 0.3s; }
-.link:hover { border-bottom-color: var(--accent); }
-
-footer { padding: 80px 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
-
-/* Update these rules in your style.css */
-
-/* --- EXPERIENCE PAGE SPECIFIC STYLING --- */
-
-/* Main Container for the Timeline */
-.timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-
-/* Vertical line connecting the cards */
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 31px; /* Aligned with the center of the dots */
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--border);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-    padding-left: 60px; /* Space for the vertical line and dots */
-}
-
-/* Accented dot for each role */
-.timeline-dot {
-    position: absolute;
-    left: 24px;
-    top: 24px;
-    width: 16px;
-    height: 16px;
-    background: var(--accent);
-    border: 4px solid var(--bg);
-    border-radius: 50%;
-    z-index: 2;
-    box-shadow: 0 0 10px var(--accent);
-}
-
-/* The Experience Card */
-.timeline-content {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 30px;
-    transition: all 0.3s ease;
-}
-
-.timeline-item:hover .timeline-content {
-    border-color: var(--accent);
-    transform: translateX(5px); /* Subtle dynamic movement */
-}
-
-/* Hierarchy: Title and Date */
-.timeline-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.timeline-header h3 {
-    font-size: 1.25rem;
     color: var(--text);
-    font-weight: 800;
-}
-
-.timeline-header .date {
+    font-weight: 600;
     font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--accent);
-    background: rgba(59, 130, 246, 0.1);
-    padding: 4px 12px;
-    border-radius: 99px;
+    transition: color 0.3s;
+    white-space: nowrap;
 }
 
-/* Hierarchy: Description List */
-.timeline-content ul {
-    list-style: none;
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+/* --- HERO & GRIDS --- */
+.hero { padding: 100px 0 60px; text-align: center; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin: 1rem 0; font-weight: 800; }
+.badge { display: inline-block; padding: 4px 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent); border-radius: 99px; color: var(--accent); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; padding: 40px 0; }
+.card { background: var(--card); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; transition: transform 0.3s; }
+.card:hover { transform: translateY(-8px); border-color: var(--accent); }
+
+/* 3) Fix spacing between Skills and Footer */
+.skills-section { margin-bottom: 80px; } 
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+.skill-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+
+/* Timeline Spacing */
+.timeline { position: relative; max-width: 850px; margin: 40px auto 80px; padding: 0 20px; }
+
+/* Mobile View Adjustments */
+@media (max-width: 850px) {
+    .nav-flex { flex-direction: column; gap: 10px; }
+    .nav-links { gap: 0.6rem; }
+    .nav-links a { font-size: 0.75rem; }
+    .brand-group { flex-direction: column; gap: 5px; }
 }
 
-.timeline-content li {
-    position: relative;
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-bottom: 12px;
-    line-height: 1.6;
-    padding-left: 18px;
-}
-
-/* Custom bullet for responsibilities */
-.timeline-content li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: 800;
-}
-
-/* Bento-style Skills Section */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 60px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.skill-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px;
-    transition: border-color 0.3s ease;
-}
-
-.skill-card:hover { border-color: var(--accent); }
-.skill-card h4 { color: var(--accent); margin-bottom: 12px; font-size: 0.85rem; text-transform: uppercase; }
-.skill-card p { font-weight: 600; font-size: 0.95rem; line-height: 1.4; }
-
-.skill-bento {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 24px;
-    border-radius: 20px;
-}
-
-.skill-bento h4 {
-    color: var(--accent);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 600px) {
-    .timeline::before { left: 21px; }
-    .timeline-dot { left: 14px; }
-    .timeline-item { padding-left: 45px; }
-    .timeline-header { flex-direction: column; }
-}
-
-/* --- EDUCATION & AWARDS STYLING --- */
-
-/* Grid Layouts */
-.edu-grid, .awards-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column for focus */
-    max-width: 800px;
-    margin: 40px auto;
-    gap: 24px;
-}
-
-/* Card Styling */
-.edu-card, .award-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 32px;
-    display: flex;
-    gap: 24px;
-    align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.edu-card:hover, .award-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent);
-}
-
-/* Logo & Icon Boxes */
-.card-logo-box, .award-icon {
-    width: 80px;
-    height: 80px;
-    background: #1e293b;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.school-logo { max-width: 60%; height: auto; filter: grayscale(1) invert(1); } /* Modernized logos */
-.award-icon { font-size: 2rem; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent); }
-
-/* Typography Hierarchy */
-.edu-card h3, .award-card h3 { font-size: 1.3rem; margin-bottom: 5px; color: var(--text); }
-.institution { color: var(--accent); font-weight: 700; font-size: 0.95rem; margin-bottom: 10px; }
-.coursework, .award-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
-
-.date-badge {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: var(--accent);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-/* Mobile Fixes */
-@media (max-width: 768px) {
-    .edu-card, .award-card { flex-direction: column; text-align: center; }
-    .card-logo-box, .award-icon { margin: 0 auto 15px; }
-}
-
-/* --- RESUME PAGE SPECIFIC STYLING --- */
-
-/* Professional Hero CTA */
-.header-cta {
-    margin-top: 30px;
-}
-
-.btn-primary {
-    background: var(--accent);
-    color: var(--bg);
-    padding: 14px 32px;
-    border-radius: 99px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-}
-
-/* Resume Viewer Layout */
-.resume-viewer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding: 40px 0 80px;
-}
-
-.resume-page {
-    width: 100%;
-    max-width: 850px;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.resume-page img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Ensure consistent nav active state */
-.nav-links a.active {
-    color: var(--accent) !important;
-}
-
-/* Responsive Scaling */
-@media (max-width: 768px) {
-    .resume-viewer {
-        gap: 20px;
-    }
-    .btn-primary {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* --- RESUME PAGE SPECIFIC STYLING --- */
-
-/* Professional Hero CTA */
-.header-cta {
-    margin-top: 30px;
-}
-
-.btn-primary {
-    background: var(--accent);
-    color: var(--bg);
-    padding: 14px 32px;
-    border-radius: 99px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-}
-
-/* Resume Viewer Layout */
-.resume-viewer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding: 40px 0 80px;
-}
-
-.resume-page {
-    width: 100%;
-    max-width: 850px;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.resume-page img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Ensure consistent nav active state */
-.nav-links a.active {
-    color: var(--accent) !important;
-}
-
-/* Responsive Scaling */
-@media (max-width: 768px) {
-    .resume-viewer {
-        gap: 20px;
-    }
-    .btn-primary {
-        width: 100%;
-        text-align: center;
-    }
-}
+/* Footer Reset */
+footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.8rem; }
