@@ -67,8 +67,8 @@ nav {
 .social-icon {
     width: 20px;
     height: 20px;
-    background: #1e293b;
-    filter: brightness(0) invert(1);
+    background: #ffffff;
+    filter: brightness(1) invert(0);
     transition: transform 0.2s ease;
 }
 
