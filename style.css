@@ -6,6 +6,8 @@
     --accent: #3b82f6;    /* Tech Blue */
     --border: #1e293b;
     --orange: #fb923c;
+    --white: #ffffff;
+    --black: #000000;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -64,11 +66,36 @@ nav {
     gap: 12px;
 }
 
+/* --- SOCIAL ICONS UNIFORM TILES --- */
+.nav-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;            /* Size of the white box */
+    height: 32px;           /* Size of the white box */
+    background-color: #ffffff; /* Uniform white background */
+    border-radius: 6px;     /* Rounded corners level */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    text-decoration: none;
+}
+
 .social-icon {
-    width: 20px;
-    height: 20px;
-    filter: brightness(1) invert(0);
-    transition: transform 0.2s ease;
+    width: 18px;            /* Size of the actual icon inside the box */
+    height: 18px;           /* Size of the actual icon inside the box */
+    display: block;
+    /* We remove the invert filter because the box is white, 
+       so the icons should stay dark/original colors */
+    filter: none; 
+}
+
+.nav-socials a:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent); /* Optional: Box turns blue on hover */
+}
+
+/* If your icons are white SVGs, use this to make them dark against the white box */
+.nav-socials a img {
+    filter: brightness(0); 
 }
 
 .social-icon:hover { transform: scale(1.1); }
