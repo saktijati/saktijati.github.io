@@ -125,6 +125,34 @@ nav {
 
 footer { padding: 80px 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
 
+/* Update these rules in your style.css */
+
+.timeline {
+    padding: 60px 0; /* Increased padding from 40px */
+    max-width: 850px; /* Slightly narrower for better focus on content */
+}
+
+.timeline-item {
+    margin-bottom: 60px; /* More space between roles */
+}
+
+.timeline-content {
+    background: var(--card);
+    padding: 35px; /* More internal padding for a "Premium" feel */
+    border-radius: 24px; /* More rounded to match Hashir style */
+    border: 1px solid var(--border);
+    transition: border-color 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: var(--accent); /* Subtle highlight when scrolling */
+}
+
+.timeline-content ul li {
+    line-height: 1.8; /* Better readability for long engineering descriptions */
+    margin-bottom: 15px; /* Gap between bullet points */
+}
+
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
     .nav-flex { flex-direction: column; text-align: center; padding: 10px 0; }
