@@ -188,8 +188,57 @@ nav {
 .skill-card p { font-weight: 600; font-size: 0.95rem; line-height: 1.4; }
 
 /* --- EDUCATION & AWARDS --- */
-.edu-grid, .awards-grid { display: grid; grid-template-columns: 1fr; max-width: 800px; margin: 40px auto 100px; gap: 24px; }
-.edu-card, .award-card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 32px; display: flex; gap: 24px; align-items: center; transition: transform 0.3s ease; }
+.edu-grid { 
+    display: grid; grid-template-columns: 1fr; max-width: 800px; margin: 40px auto 100px; gap: 24px; 
+}
+.awards-grid{
+    display: flex;
+    flex-direction: column; /* Keeps the 3 awards stacked in rows */
+    gap: 20px;
+    max-width: 1000px; /* Adjusted for better horizontal spread */
+    margin: 40px auto 100px;
+}
+.edu-card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 32px; display: flex; gap: 24px; align-items: center; transition: transform 0.3s ease; }
+.award-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    align-items: center; /* Vertically centers the icon with the text columns */
+    gap: 30px;
+    transition: transform 0.3s ease;
+}
+
+/* Column 1: The Title */
+.award-card h3 {
+    width: 250px; /* Fixed width ensures column alignment */
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 0; /* Removed margin to keep center alignment */
+    flex-shrink: 0;
+}
+
+/* Column 2: The Date */
+.date-badge {
+    width: 100px; /* Fixed width ensures column alignment */
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent);
+    text-transform: uppercase;
+    text-align: center;
+    flex-shrink: 0;
+    margin-bottom: 0; /* Removed margin to keep center alignment */
+}
+
+/* Column 3: The Description */
+.award-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1; /* Takes up the remaining space */
+}
+
 .edu-card:hover, .award-card:hover { transform: translateY(-5px); border-color: var(--accent); }
 .card-logo-box, .award-icon { width: 80px; height: 80px; background: #1e293b; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .school-logo { max-width: 60%; height: auto; filter: grayscale(1) invert(1); }
