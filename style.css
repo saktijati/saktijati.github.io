@@ -15,11 +15,33 @@ body {
     margin: 0;
 }
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.social-links {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85rem;
+}
+
+.social-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.container { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 0 24px; /* Added side padding so content doesn't hit the screen edge */
+}
 
 /* Professional Nav */
 nav { padding: 25px 0; border-bottom: 1px solid var(--border); }
-nav .container { display: flex; justify-content: space-between; align-items: center; }
+nav .container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap; /* Prevents the 'zoom out' issue on mobile */
+    gap: 15px;
+}
 nav h1 span { color: var(--accent); }
 nav ul { list-style: none; display: flex; gap: 30px; }
 nav a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; }
@@ -57,7 +79,9 @@ header p { color: var(--text-muted); font-size: 1.1rem; }
     border-bottom: 1px solid var(--border);
 }
 
-.card-content { padding: 25px; }
+.card-content { 
+    padding: 32px; /* Increased padding inside the cards */
+}
 
 .badge {
     display: inline-block;
@@ -71,7 +95,10 @@ header p { color: var(--text-muted); font-size: 1.1rem; }
 }
 
 .card-content h3 { margin: 0 0 10px; font-size: 1.25rem; }
-.card-content p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+.card-content p { 
+    margin-top: 12px;
+    line-height: 1.7; /* Better readability for transit descriptions */
+}
 
 /* Engineering-Style Buttons */
 .btn {
