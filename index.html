@@ -3,62 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio of Sakti Jati</title>
-    
+    <title>Sakti Jati | Sustainable Mobility & Transit Design</title>
     <link rel="stylesheet" href="style.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-<nav>
-    <div class="container">
-        <h1>Portfolio</span></h1>
-        
-        <ul class="nav-links">
-            <li><a href="https://github.com/saktijati/portfolio">Portfolio</a></li>
-            <li><a href="experience.html">Experience</a></li>
-        </ul>
 
-        <div class="social-links">
-            <a href="https://linkedin.com/in/saktijati" target="_blank">LinkedIn</a>
-            <a href="https://github.com/saktijati" target="_blank">GitHub</a>
-            <a href="https://instagram.com/saktimjati" target="_blank">Instagram</a>
-        </div>
-    </div>
-</nav>
-
-<header>
-    <div class="container">
-        <h2>Sakti Jati</h2>
-        <p>Industrial Engineering • Urban Analyst • Transit Designer</p>
-    </div>
-</header>
-
-<section id="portfolio">
-    <div class="container">
-        <div class="map-grid">
-            <div class="map-card active">
-                <img src="petatfb-image.jpg" alt="Banjarnegara Transit Map">
-                <h3>Banjarnegara Transit Network</h3>
-                <p>Comprehensive design of regional transit routes covering 20+ districts. Focused on accessibility and multi-modal integration.</p>
-                <a href="https://tfbanjarnegara.github.io/transitmap/" class="btn">View Work</a>
-            </div>
-
-            <div class="map-card progress">
-                <div class="placeholder">Purbalingga Map Underway</div>
-                <h3>TF Purbalingga</h3>
-                <p>Mapping and designing existing regional transit routes.</p>
-            </div>
-
-            <div class="map-card planning">
-                <div class="placeholder">Wonosobo Map in Planning</div>
-                <h3>TF Wonosobo</h3>
-                <p>Initial data acquisition phase for mapping transit routes.</p>
+    <nav>
+        <div class="container nav-flex">
+            <div class="logo">Sakti<span>Jati</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="experience.html">Experience</a></li>
+            </ul>
+            <div class="nav-socials">
+                <a href="https://linkedin.com/in/saktijati" target="_blank" class="btn-sm">LinkedIn</a>
+                <a href="https://github.com/saktijati" target="_blank" class="btn-sm">GitHub</a>
             </div>
         </div>
-    </div>
-</section>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="badge">Industrial Engineering | Geospatial Analyst</div>
+            <h1>Bridging Industrial Engineering with Urban Connectivity.</h1>
+            <p>Developing data-driven transit solutions and regional mobility frameworks.</p>
+        </div>
+    </header>
+
+    <section class="portfolio">
+        <div class="container">
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="assets/petatfb-image.jpg" alt="Banjarnegara Transit Map">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag tag-blue">Active Project</span>
+                        <h3>Banjarnegara Transit Network</h3>
+                        <p>Synthesized geospatial and statistical data from 20+ government publications to design regional transit maps for 50+ districts.</p>
+                        <div class="card-footer">
+                            <a href="https://github.com/tfbanjarnegara/transit-map" target="_blank" class="link">View Tech Docs →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-container placeholder-bg">
+                        <span>Mapping in Progress</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag tag-orange">Underway</span>
+                        <h3>TF Purbalingga Integration</h3>
+                        <p>Currently analyzing 20+ journals to synchronize cross-regency mobility and urban development plans.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-container placeholder-bg">
+                        <span>Planning Phase</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag tag-gray">Strategic Planning</span>
+                        <h3>TF Wonosobo Analysis</h3>
+                        <p>Strategic data acquisition phase for regional connectivity and urbanization impact analysis.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sakti Maulana Jati. Specialized in Transit Design.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
