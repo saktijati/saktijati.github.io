@@ -230,15 +230,10 @@ nav {
     margin: 40px auto 100px;
 }
 
-.edu-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 32px;
-    display: flex;
-    align-items: center; /* Vertically centers the logo and year with the text */
-    gap: 25px;
-    transition: transform 0.3s ease;
+edu-card h3 {
+    font-size: 1.15rem;
+    color: var(--text);
+    margin-bottom: 4px;
 }
 
 .award-card {
@@ -282,23 +277,31 @@ nav {
 }
 
 .edu-card:hover, .award-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+
 .card-logo-box {
-    width: 85px;
-    height: 85px;
-    background: #1e293b;
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
     border: 1px solid var(--border);
-    border-radius: 12px; /* Your preferred rounding level */
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    padding: 8px;
+    margin-right: 30px;
 }
+
 .award-icon { width: 80px; height: 80px; background: #1e293b; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
 .school-logo {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+}
+
+.edu-info-main {
+    flex: 0 0 320px; /* Does not grow, does not shrink, exactly 320px wide */
+    margin-right: 20px;
 }
 
 .edu-card h3 {
@@ -309,35 +312,39 @@ nav {
 }
 
 .edu-year {
-    width: 100px; /* Fixed width for alignment */
-    font-size: 0.75rem;
+    flex: 0 0 120px; /* Locked width for vertical alignment */
+    font-size: 0.8rem;
     font-weight: 800;
     color: var(--muted);
-    text-transform: uppercase;
     text-align: center;
-    flex-shrink: 0;
+    margin-right: 30px;
 }
 
 .coursework {
-    flex-grow: 1; /* Takes up all remaining space */
+    flex: 1; /* Takes the rest of the card width */
     color: var(--muted);
     font-size: 0.9rem;
     line-height: 1.5;
-    padding-left: 20px;
-    border-left: 1px solid var(--border);
+    padding-left: 30px;
+    border-left: 1px solid var(--border); /* Vertical separator */
 }
 
 .coursework strong {
     color: var(--text);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     display: block;
     margin-bottom: 5px;
+    letter-spacing: 1px;
 }
 
 .award-icon { font-size: 2rem; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent); }
 .edu-card h3, .award-card h3 { font-size: 1.3rem; margin-bottom: 5px; color: var(--text); }
-.institution { color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+.institution {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
 .award-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
 .date-badge { display: inline-block; font-size: 0.75rem; font-weight: 800; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; }
 
@@ -362,17 +369,21 @@ nav {
     .timeline-item { padding-left: 45px; }
     .timeline-header { flex-direction: column; align-items: flex-start; }
     
-    edu-card {
+    .edu-card {
         flex-direction: column;
         text-align: center;
+        padding: 24px;
     }
     .edu-info-main, .edu-year, .coursework {
+        flex: 1 1 auto;
         width: 100%;
+        margin-right: 0;
         padding-left: 0;
         border-left: none;
     }
-
-    .card-logo-box { margin: 0 auto; }
+    .edu-year { margin: 15px 0; }
+    .card-logo-box { margin: 0 auto 20px; }
+    
     .award-card { flex-direction: column; text-align: center; }
     .award-icon { margin: 0 auto 15px; }
     
