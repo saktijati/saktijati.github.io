@@ -236,6 +236,7 @@ nav {
     border-radius: 24px;
     padding: 32px;
     display: flex;
+    flex-direction: row;
     align-items: center; /* Vertically centers the logo and year with the text */
     gap: 30px;
     transition: transform 0.3s ease;
@@ -293,6 +294,7 @@ nav {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    margin-right: 30px;
     padding: 8px;
 }
 .award-icon { width: 80px; height: 80px; background: #1e293b; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -308,6 +310,13 @@ nav {
     margin-bottom: 4px;
     line-height: 1.3;
 }
+
+.edu-info-main {
+    flex: 0 0 320px; /* Lock width to 320px for perfect alignment */
+    margin-right: 20px;
+}
+
+
 
 .edu-year {
     width: 100px; /* Fixed width for alignment */
