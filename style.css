@@ -377,46 +377,68 @@ nav {
 
 /* --- CONSOLIDATED RESPONSIVE QUERIES --- */
 @media (max-width: 900px) {
+    /* --- NAV & HERO --- */
     .nav-flex { flex-direction: column; text-align: center; gap: 15px; }
     .brand-group { flex-direction: column; align-items: center; width: 100%; }
     .nav-links { gap: 0.8rem; justify-content: center; width: 100%; }
-    .nav-links a { font-size: 0.8rem; }
     .nav-socials { justify-content: center; width: 100%; margin-bottom: 10px; order: -1; }
-    
+    .hero h1 { font-size: 2.2rem; }
+
+    /* --- EDUCATION & AWARD CARDS MOBILE --- */
+    .edu-card, .award-card { 
+        flex-direction: column; 
+        text-align: center; 
+        padding: 30px 24px; 
+        gap: 12px; /* 1) Tightened gap between logo and text */
+    }
+
+    /* Target the info pillar (Column 2) for both pages */
+    .edu-info-main, .award-info-main { 
+        flex: auto; 
+        width: 100%; 
+        margin: 0; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* 2) FORCES perfect centering for all schools */
+        gap: 4px;
+    }
+
+    /* Reset years and badges to center */
+    .edu-year, .date-badge {
+        text-align: center;
+        margin: 0 !important;
+        width: auto !important;
+    }
+
+    /* Fixed logo boxes for mobile */
+    .card-logo-box, .award-icon-box { 
+        margin: 0 auto 10px; 
+        width: 85px;
+        height: 85px;
+    }
+
+    /* FIX FOR JIS LOGO: Makes non-square logos fit like square ones */
+    .school-logo, .award-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Ensures JIS logo doesn't stretch */
+    }
+
+    /* 1) Tightened gap between Year and Coursework/Description */
+    .coursework, .award-description {
+        width: 100%;
+        margin-top: 8px; 
+        text-align: center;
+        padding: 0;
+        border: none;
+    }
+
+    /* --- OTHER ELEMENTS --- */
     .timeline::before { left: 21px; }
     .timeline-dot { left: 14px; }
     .timeline-item { padding-left: 45px; }
-    .timeline-header { flex-direction: column; align-items: flex-start; }
-    
-    .edu-card { flex-direction: column; text-align: center; }
-    .edu-info-main .edu-year {
-        flex: auto;
-        width: 100%;
-        align-items: center; /* Centers text for mobile */
-        margin-right: 0;
-    }
-    .edu-content-group { flex: auto; width: 100%; margin: 20px 0; align-items: center; }
-    .edu-info-main .edu-year {text-align: center; }
-
-    .card-logo-box { margin: 0 auto; }
-    .award-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-    
-    .award-info-main {
-        flex: auto;
-        width: 100%;
-        align-items: center; /* Centered for mobile */
-    }
-
-    .award-info-main .date-badge {
-        text-align: center;
-    }
     
     .btn-primary { width: 100%; text-align: center; }
-    .hero h1 { font-size: 2.2rem; }
 }
 
 footer { padding: 80px 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
