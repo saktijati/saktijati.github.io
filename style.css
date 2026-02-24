@@ -66,7 +66,7 @@ nav {
     gap: 12px;
 }
 
-/* --- SOCIAL ICONS UNIFORM TILES --- */
+/* --- SOCIALs UNIFORM TILES --- */
 .nav-socials a {
     display: flex;
     align-items: center;
@@ -113,6 +113,13 @@ nav {
 
 .nav-links a:hover, .nav-links a.active {
     color: var(--accent) !important;
+}
+
+.section-title {
+    text-align: left; /* Forces the text to stay left */
+    margin-bottom: 24px; /* Space between title and cards */
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 /* --- HERO STYLING --- */
