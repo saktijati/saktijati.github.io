@@ -92,10 +92,15 @@
     </section>
 
    <footer>
-        <div class="container">
-            <p>&copy; 2025 Sakti Maulana Jati. All Rights Reserved.</p>
+    <div class="container">
+        <p>&copy; <span id="current-year"></span> Sakti Maulana Jati. All Rights Reserved.</p>
+        
         </div>
     </footer>
+
+    <script>
+        document.getElementById("current-year").innerHTML = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
