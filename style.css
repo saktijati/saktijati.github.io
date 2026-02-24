@@ -117,8 +117,8 @@ nav {
 
 .section-title {
     text-align: left; /* Forces the text to stay left */
-    margin-bottom: 24px; /* Space between title and cards */
-    font-size: 1.8rem;
+    margin-bottom: 10px; /* Space between title and cards */
+    font-size: 2.2rem;
     font-weight: 700;
 }
 
