@@ -22,7 +22,7 @@
             </div>
             
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="education.html">Education</a></li>
                 <li><a href="awards.html">Awards</a></li>
@@ -31,8 +31,12 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
+    <header class="hero main-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-tech-overlay"></div>
+        <div class="hero-fade-bottom"></div>
+        
+        <div class="container hero-content">
             <div class="badge">Cities • Transportation • Social Issues</div>
             <h1>Leverage Urbanism and Education for Better Cities and Lives</h1>
             <p>Developing data-driven urbanism & sustainable mobility strategies.</p>
@@ -41,25 +45,32 @@
 
     <section class="portfolio">
         <div class="container">
-            <section id="work" class="highlight-section">
-            <div class="container">
-                <h2 class="section-title">Highlight</h2> 
-                
-                <div class="grid">
-                    </div>
-            </div>
-            </section>
+            <h2 class="section-title">Highlight</h2> 
             
             <div class="grid">
                 
+                <div class="card featured-card">
+                    <div class="card-img-container">
+                        <img src="assets/jaga-sesama-map.jpg" alt="Jaga Sesama Accessibility Map">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag tag-green">Pilot Phase</span>
+                        <h3>Jaga Sesama: Inclusive Transit Audit</h3>
+                        <p>Auditing 49 bus stops across Central Jakarta for disability access and walkability standards under the FIRST program by UK PACT[cite: 4, 239].</p>
+                        <div class="card-footer">
+                            <a href="jaga-sesama.html" class="link">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div class="card-img-container">
                         <img src="assets/petatfb-image.jpg" alt="Banjarnegara Transit Map">
                     </div>
                     <div class="card-content">
                         <span class="tag tag-blue">Published</span>
-                        <h3>Transportasi Banjarnegara Transit Map</h3>
-                        <p>Synthesized geospatial and statistical data from government publications to design regional transit maps for 20 districts with over 30 routes.</p>
+                        <h3>Transportasi Banjarnegara Map</h3>
+                        <p>Synthesized geospatial data to design regional transit maps for 20 districts with over 30 routes.</p>
                         <div class="card-footer">
                             <a href="https://tfbanjarnegara.github.io/transitmap/" target="_blank" class="link">Learn more</a>
                         </div>
@@ -69,29 +80,14 @@
                 <div class="card">
                     <div class="card-img-container">
                         <img src="assets/tfpurbalingga-logo.png" alt="Purbalingga Transit Map">
-                        <span>Mapping Phase</span>
+                        <div class="overlay-text">Mapping Phase</div>
                     </div>
                     <div class="card-content">
                         <span class="tag tag-orange">Underway</span>
-                        <h3>Transportasi Purbalingga Transit Map</h3>
+                        <h3>Transportasi Purbalingga Map</h3>
                         <p>Currently mapping and designing transit networks for inter and cross-regency mobility.</p>
                         <div class="card-footer">
                             <a href="https://instagram.com/tfpurbalingga/" target="_blank" class="link">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-img-container">
-                        <img src="assets/tfwonosobo-logo.png" alt="Wonosobo Transit Map">
-                        <span>Planning Phase</span>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag tag-gray">Planning</span>
-                        <h3>Transportasi Wonosobo Transit Map</h3>
-                        <p>Currently planning and acquiring data of transit networks for inter-regency mobility.</p>
-                        <div class="card-footer">
-                            <a href="https://instagram.com/tfwonosobo/" target="_blank" class="link">Learn more</a>
                         </div>
                     </div>
                 </div>
@@ -100,10 +96,9 @@
         </div>
     </section>
 
-   <footer>
-    <div class="container">
-        <p>&copy; <span id="current-year"></span> Sakti Maulana Jati. All Rights Reserved.</p>
-        
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Sakti Maulana Jati. All Rights Reserved.</p>
         </div>
     </footer>
 
