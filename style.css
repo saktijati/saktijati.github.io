@@ -215,7 +215,7 @@ nav {
     width: 100%;
     height: 100%;
     /* Ensure this filename matches your assets folder exactly */
-    background-image: url('assets/team-audit-photo.jpg'); 
+    background-image: url('assets/banner-picture.jpeg'); 
     background-size: cover;
     background-position: center;
     /* desaturated noir effect */
