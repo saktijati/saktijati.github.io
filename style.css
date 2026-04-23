@@ -508,3 +508,64 @@ nav {
 }
 
 footer { padding: 80px 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
+
+/* Article layout Jaga Sesama */
+.article-container { padding-bottom: 80px; }
+
+.article-header {
+    text-align: left;
+    padding: 100px 0 60px;
+    background: #0b0d11; 
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.intro-text {
+    font-size: 1.4rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin: 40px 0;
+    font-weight: 600;
+}
+
+.article-figure {
+    margin: 60px 0 20px;
+    width: 100%;
+}
+
+.article-figure img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.article-figure figcaption {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+}
+
+.explanation {
+    max-width: 750px;
+    margin: 0 auto 60px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.conclusion {
+    background: var(--card);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    margin-top: 80px;
+}
+
+.conclusion h2 { margin-bottom: 20px; color: var(--accent); }
