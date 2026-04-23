@@ -542,19 +542,49 @@ footer { padding: 80px 0; border-top: 1px solid var(--border); text-align: cente
 }
 
 /* --- TAMING DESKTOP IMAGES (FIX) --- */
+/* --- UPDATED: TAMING DESKTOP & MOBILE IMAGES --- */
 .visual-block {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center figure box */
+    align-items: center; 
     margin: 60px 0 20px;
+    width: 100%; /* Ensures container takes full width on mobile */
 }
 
 .visual-block img {
-    max-width: 750px; /* Enforces maximum size for native analysis maps */
-    width: 100%; /* Resizes on mobile */
-    height: auto;
+    max-width: 750px; /* Caps size on Desktop */
+    width: 100%;      /* Essential: Image scales down on Mobile */
+    height: auto;     /* Essential: Prevents stretching */
     border-radius: 12px;
     border: 1px solid var(--border);
+    display: block;
+}
+
+.article-figure figcaption {
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* --- MOBILE RESPONSIVENESS FIX --- */
+@media (max-width: 900px) {
+    .article-hero {
+        min-height: 350px; /* Smaller height for mobile headers */
+    }
+    
+    .intro-text {
+        font-size: 1.8rem; /* Smaller font for mobile screens */
+    }
+
+    .explanation {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .visual-block img {
+        max-width: 100%; /* Ensures images never overflow phone screen */
+    }
 }
 
 .explanation {
